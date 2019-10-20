@@ -23,18 +23,6 @@ pipeline {
             }
         }
 		
-		stage('Push docker images') {
-            when { 
-                branch 'master'
-            }
-            steps {
-			script {
-			docker.withRegistry('https://registry.hub.docker.com','dockercred') 
-			{
-			app.push("${env.Build_Number}")
-			}
-        }
-    }
-}
+
 }
 }
