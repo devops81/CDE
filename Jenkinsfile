@@ -24,6 +24,7 @@ pipeline {
             when { 
                 branch 'master'
             }
+		script {
 		steps {
 			docker.withRegistry('https://registry.hub.docker.com','dockercred') {
 			app.push("${env.Build_Number}")
@@ -31,6 +32,7 @@ pipeline {
 			app.push("latest")
 
             }
+		}
 		}
 
 }
