@@ -23,7 +23,7 @@ pipeline {
             }
         }
 		
-		stage('Build docker images') {
+		stage('Push docker images') {
             when { 
                 branch 'master'
             }
